@@ -1,0 +1,655 @@
+/* src/components/Header.css */
+ .App{
+  width:100vw;
+  height: auto;
+  overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites do contêiner */
+ }
+
+
+
+ /*estrutura do texto terminada, começando cutumizacão do inicio do portfolio */
+
+
+
+
+
+#rickmorty{
+width: 100%;
+height: 100%;
+object-fit: cover; /* Garante que a imagem preencha o container */
+
+}
+
+.portfoliobox{
+  padding-top: 5%;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  overflow: hidden;/*o que for maior que o conteiner não será exibido.*/
+}
+.portfoliobox h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o texto horizontal e verticalmente */
+  font-size: 4rem;
+  font-family: 'Staatliches', sans-serif; /* Fonte com estilo forte e marcante */
+  color: #d4af37; /* Tom de dourado envelhecido */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8), 5px 5px 15px rgba(139, 69, 19, 0.7); /* Sombra com efeito sombrio e enferrujado */
+  background: linear-gradient(135deg, #3a3a3a 20%, #5c4033 80%); /* Efeito de corrosão com cores sombrias */
+  padding: 10px 20px;
+  border: 3px solid #a0522d; /* Borda com um tom enferrujado */
+  border-radius: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Efeito de animação ao passar o mouse */
+.portfoliobox h1:hover {
+  color: #ffdd57; /* Destaque em dourado mais forte ao passar o mouse */
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.3); /* Efeito brilhante ao passar o mouse */
+  transform: translate(-50%, -50%) scale(1.1); /* Centraliza e amplia o texto ao passar o mouse */
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+ /*estrutura do inicio portfolio terminada, começando cutumizacão da barra de navegação*/
+
+
+.nav {
+  position: fixed; /* Fixa a barra de navegação na tela */
+  top: 0; /* Alinha a barra de navegação ao topo da página */
+  left: 0; /* Alinha a barra de navegação à esquerda da página */
+  width: 100%; /* Define a largura da barra de navegação para ocupar 100% da tela */
+  z-index: 1000; /* Garante que a barra de navegação fique acima de outros elementos na página */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 0 20px;
+
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav img{
+  width: 1; /* Defina o tamanho desejado para as imagens */
+  
+  margin-right: 1vw; /* Espaçamento entre as imagens (opcional) */
+  background-color: rgb(178, 181, 185);
+  border-style: outset;
+  border-width: 2px;
+  border-radius: 100%;
+}
+/* Estilo dos itens de navegação */
+.nav-item {
+  position: relative; /* Necessário para o efeito ::before */
+  
+}
+/* Lista de links de navegação */
+.nav-links {
+  list-style: none; /* Remove marcadores da lista */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove preenchimento */
+  display: flex; /* Alinha os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+}
+/* Estilo dos itens de navegação */
+.nav-links li {
+  position: relative; /* Necessário para o efeito ::after */
+}
+/* Estilo dos links de navegação */
+.nav-links li a {
+  
+  display: block; /* Torna o link um bloco clicável */
+  color: white; /* Cor do texto dos links */
+  text-align: center; /* Alinha o texto ao centro */
+  padding: 4vh 2vh; /* Espaçamento interno */
+  text-decoration: none; /* Remove sublinhado */
+  position: relative;/* Necessário para o box-shadow */
+  transition: color 0.3s ease; /* Transição suave para a cor do texto */
+}
+/* Adiciona um efeito de destaque ao passar o mouse */
+.nav-links li a:hover {
+  color: #f0f0f0; /* Muda a cor do texto ao passar o mouse */
+}
+/* Estilo para o efeito hover com destaque da região */
+.nav-links li a::before {
+  content: ''; /* Cria o pseudo-elemento */
+  position: absolute; /* Posiciona o pseudo-elemento */
+  top: -1%; /* Espaçamento acima do link */
+  left: -1%; /* Espaçamento à esquerda do link */
+  right: -1%; /* Espaçamento à direita do link */
+  bottom: -1%; /* Espaçamento abaixo do link */
+  border-radius: 4%; /* Bordas arredondadas para o efeito de destaque */
+  z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para a cor de fundo e sombra */
+}
+
+/* Muda a cor de fundo e a sombra do pseudo-elemento ao passar o mouse */
+.nav-links li a:hover::before {
+  background-color: rgba(255, 255, 255, 0.4); /* Muda a cor de fundo ao passar o mouse */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Muda a sombra ao passar o mouse */
+}
+/* Estilo dos ícones de redes sociais */
+
+.nav-icons {
+  display: flex; /* Alinha os ícones horizontalmente */
+  align-items: center; /* Alinha os ícones verticalmente ao centro */
+}
+/* Estilo dos ícones */
+.nav-icons img {
+  height: 24px; /* Define a altura dos ícones */
+  margin-left: 10px; /* Espaçamento entre os ícones */
+}
+
+
+
+
+
+ /*Barra de navegação terminada, começando cutumizacão da carta de apresentação */
+
+
+
+
+
+.carta {
+  background-image: url("https://4kwallpapers.com/images/wallpapers/rick-and-morty-rick-3840x2160-9368.jpg");
+  width: fit-content;
+  height: auto;
+  display: flex; /* Alinha os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin: auto;
+  justify-content: space-evenly;
+  padding: 5%;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+}
+
+
+.perfil-box{
+  width: 50%;
+  height: 90%;
+  margin-top: 5%;
+  padding: 0 50px; /*Adiciona espaço ao redor da imagem*/
+} 
+
+/* Estilo da imagem */
+.perfil-box img {
+  width: 100%; /* 100% Faz a imagem ocupar toda a largura do contêiner */
+  height: 100%;
+  border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave à imagem */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave para transformações */
+}
+
+/* Estilo opcional para alterar a posição da imagem com efeito hover */
+.perfil-box img:hover {
+    transform: scale(1.02); /* Aumenta a imagem ligeiramente ao passar o mouse */
+}
+
+/* Estilos para o contêiner da carta de apresentação */
+.cover-letter-container {
+  display: flex; /* Utiliza flexbox para alinhar o conteúdo centralmente */
+  width: 50%;
+
+  margin-top: 5%;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  box-sizing: border-box; /* Inclui padding e borda na largura e altura totais do elemento */
+
+}
+
+/* Estilos para a carta de apresentação */
+.cover-letter {
+  background-color: #ffffffc5; /* Cor de fundo branca para a carta */
+  border-radius: 10px; /* Adiciona cantos arredondados mais sutis */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais pronunciada para maior profundidade */
+  padding: 2% 5%;
+  width: 100%;
+  color: #333333; /* Define a cor do texto */
+  font-family: 'Times New Roman', serif; /* Define uma fonte serifada para um toque mais formal */
+  line-height: 1.2; /* Define a altura da linha para melhor legibilidade e aparência formal */
+  box-sizing: border-box; /* Inclui padding e borda na largura e altura totais do elemento */
+  border-left: 5px solid #333; /* Adiciona uma borda à esquerda com uma cor de destaque azul */
+  
+}
+
+/* Estilos para o título da carta de apresentação */
+.cover-letter-title {
+  font-size: 30px; /* Define o tamanho da fonte do título */
+  margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+  color: #333; /* Define a cor azul para o título */
+  font-family: 'Georgia', serif; /* Fonte elegante para o título */
+}
+
+/* Estilos para o texto da carta de apresentação */
+.cover-letter-text {
+  margin-bottom: 20px; /* Adiciona espaço abaixo de cada parágrafo */
+  text-align: justify; /* Justifica o texto para uma aparência formal e alinhada */
+  font-size: 1.2em /* Define o tamanho da fonte para uma leitura confortável */
+}
+
+
+
+
+
+ /*carta de apresentação terminada, começando cutumizacão do curriculo Vitae*/
+
+
+
+
+
+
+
+  .caixa-vitae{
+    background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/8692.jpg");
+    padding-top: 50%;
+    padding: 3%;
+    width: fit-content;
+    height: auto;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+    background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }
+ .vitae-tudo {
+  background-color: #ddddddc8;
+  font-family: Arial, sans-serif;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.vitae-cabeçalio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
+  
+  
+}
+
+.pfc{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  
+}
+
+.cabeçalio-details h1 {
+ margin: 0;
+  font-size: 24px;
+  color: #333;
+  
+}
+
+.header-details p {
+  margin: 0;
+  color: #777;
+ 
+}
+
+.contact-info,
+.objective,
+.education,
+.experience,
+.skills {
+  margin-bottom: 20px;
+
+}
+
+.contact-info h2, /*div feita para selecionar os titulos do curriculo*/
+.objective h2,
+.experience h2,
+.skills h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-info p,
+.objective p,
+.education p,
+.experience p,
+.skills ul {
+  margin: 5px 0;
+  color: #555;
+}
+
+.job,
+.school {
+  margin-bottom: 15px;
+}
+
+.job p,
+.school p {
+  margin: 2px 0;
+  color: #555;
+}
+
+.skills ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.skills li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+
+
+ /*Curriculo Vitae, começando cutumizacão do Filtro*/
+
+
+
+
+ .filtro-container {/*alinha tudo ao centro*/
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  text-align: center; 
+  position: relative;
+}
+
+.filtro-select {/*opcoes do botao do trimestre*/
+  margin-bottom: 20px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccca7;
+}
+
+
+
+.trabalhos-grid {/*ajusta as opcoes do tamanhos das divs de cd trabalho*/
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
+  gap: 20px;
+}
+
+.trabalho-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  background-color: #f0f0f0; /* Apenas para visualização */
+  aspect-ratio: 1; /* Mantém uma proporção 1:1 (quadrado) */
+  display: flex;
+  align-items: center;
+  
+ 
+ 
+}
+
+.trabalho-imagem {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.trabalho-overlay { /*altera somente o efito ao passar o mouse na imagem*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.trabalho-item:hover .trabalho-overlay {
+  opacity: 1;
+}
+
+.trabalho-titulo {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+ /*Filtro terminado, começando cutumizacão das máterias*/
+
+
+
+
+
+.tecnico-tudo{
+  background-image: url("https://wallpapercave.com/wp/wp3826438.jpg");
+  padding: 15%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  
+}
+
+.tecnico-tudo h1{
+font-size: 4em; /* Tamanho maior para dar ênfase */
+  color: #ffdd57; /* Um tom dourado que contrasta bem com o azul */
+  font-family: 'Georgia', serif; /* Estilo de fonte com toque clássico */
+  text-shadow: 3px 3px 15px rgba(0, 0, 50, 0.7), 0px 0px 10px rgba(255, 255, 255, 0.6); /* Efeito de brilho e profundidade */
+  letter-spacing: 3px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 50, 2.7); /* Adiciona brilho ao redor */
+ 
+  }
+
+.matetaticatudo{
+  background-image: url("https://i.redd.it/ugtza7ly9oz41.jpg");
+  padding: 10%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  
+}
+.matetaticatudo h1{
+  color: #ffffff; /* Cor branca para o texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 3.8); /* Adiciona uma sombra sutil ao texto */
+  margin-top: 20vh; /* Espaçamento superior para centralizar verticalmente */
+  font-family: 'Arial', sans-serif; /* Estilo de fonte */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre letras para um toque elegante */
+
+}
+
+.naturezatudo{
+  background-image: url("https://th.bing.com/th/id/R.85088012157868dd2f951d0d70f10dce?rik=sJVwtlfM7DSHJA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fnM53yne.jpg&ehk=tO6Zc2H7S0v5hKZKDRvyE3Va6etGWpxH2TCNtzXBvyQ%3d&risl=&pid=ImgRaw&r=0");
+  padding: 10%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  
+}
+.naturezatudo h1{
+  color: #ffffff; /* Cor branca para o texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 3.8); /* Adiciona uma sombra sutil ao texto */
+  margin-top: 20vh; /* Espaçamento superior para centralizar verticalmente */
+  font-family: 'Arial', sans-serif; /* Estilo de fonte */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre letras para um toque elegante */
+
+
+}
+
+.humanastudo{
+  background-image: url("https://th.bing.com/th/id/R.f8ac410470cdf7bf4c64865bc19d2140?rik=y4W4lWbaT0H7Mw&pid=ImgRaw&r=0");
+  padding: 10%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+
+} 
+.humanastudo h1{
+  color: #ffffff; /* Cor branca para o texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 3.8); /* Adiciona uma sombra sutil ao texto */
+  margin-top: 20vh; /* Espaçamento superior para centralizar verticalmente */
+  font-family: 'Arial', sans-serif; /* Estilo de fonte */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre letras para um toque elegante */
+
+}
+.linguagenstudo{
+  background-image: url("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/02/rdr-2-poker-game-smart.jpg");
+  padding: 10%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+
+}
+
+.linguagenstudo h1{
+  font-size: 4em; /* Tamanho grande do texto para destaque */
+  font-weight: 400; /* Negrito aplicado diretamente */
+  text-align: center; /* Centraliza o texto */
+  color: transparent; /* Torna o texto transparente para aplicar o gradiente */
+  font-weight: bold; /* Deixa o texto em negrito */
+  background: linear-gradient(135deg, #fffffe, #f3f2ef); /* Gradiente em tons vivos de amarelo */
+  -webkit-background-clip: text; /* Aplica o gradiente somente ao texto */
+  background-clip: text; /* Aplica o gradiente somente ao texto */
+  padding: 20px; /* Espaçamento interno ao redor do texto */
+}
+
+.ppetudo{
+  background-image: url("https://i.pinimg.com/originals/67/7f/52/677f5237dd7c37df5a99204a642f62fb.jpg");
+  padding: 10%;
+  padding-top: 20%;
+  width: auto;
+  height: 900px;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-grow: 0; /* Permite que a lista ocupe o espaço disponível */
+  background-size: cover; /* Faz a imagem ocupar todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem dentro do contêiner */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+}
+.ppetudo h1{
+  font-size: 4em; /* Tamanho grande do texto para destaque */
+  font-weight: 400; /* Negrito aplicado diretamente */
+  text-align: center; /* Centraliza o texto */
+  color: transparent; /* Torna o texto transparente para aplicar o gradiente */
+  font-weight: bold; /* Deixa o texto em negrito */
+  background: linear-gradient(135deg, #fffffe, #f3f2ef); /* Gradiente em tons vivos de amarelo */
+  -webkit-background-clip: text; /* Aplica o gradiente somente ao texto */
+  background-clip: text; /* Aplica o gradiente somente ao texto */
+  padding: 20px; /* Espaçamento interno ao redor do texto */
+
+
+}
+@media (max-width: 480px) {
+  
+  .cover-letter {
+    padding: 15px; /* Reduz ainda mais o padding em telas muito pequenas */
+  }
+
+  .cover-letter-title {
+    font-size: 24px; /* Reduz ainda mais o tamanho da fonte do título em telas muito pequenas */
+  }
+
+  .cover-letter-text {
+    font-size: 14px; /* Reduz ainda mais o tamanho da fonte do texto em telas muito pequenas */
+  }
+}
+
+body {
+  width: 100%;
+  background-color: #000000; /* Cor de fundo neutra para o contêiner */
+  display: block;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background-color: #ede1d3;
+}
+
+.extrastudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os botões */
+  margin: auto;
+  margin-top: 31px;
+}
+
+.extrastudo h1 {
+  margin-bottom: 40px;
+  font-size: 48px;
+  color: #333;
+}
+
+.extrastudo button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.extrastudo button:hover {
+  background-color: #45a049;
+}
